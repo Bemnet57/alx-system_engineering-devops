@@ -1,0 +1,51 @@
+#!/bin/bash
+
+# Decode base5 from custom alphabet
+decode_base() {
+    local input=$1
+    local alphabet=$2
+    local base=${#alphabet}
+    local output=0
+    local index
+
+    for (( i=0; i<${#input}; i++ )); do
+        char=${input:i:1}
+        index=$(expr index "$alphabet" "$char")
+        index=$((index - 1))  # expr index is 1-based
+        output=$((output * base + index))
+    done
+
+    echo "$output"
+}
+
+# Encode to custom base
+encode_base() {
+    local number=$1
+    local alphabet=$2
+    local base=${#alphabet}
+    local result=""
+
+    while [ "$number" -gt 0 ]; do
+        rem=$((number % base))
+        result="${alphabet:rem:1}$result"
+        number=$((number / base))
+    done
+
+    echo "$result"
+}
+
+# Base alphabets
+water_base="waetr"
+stir_base="stir."
+bestchol_base="bestchol"
+
+# Convert WATER and STIR to decimal
+water_decimal=$(decode_base "$WATER" "$water_base")
+stir_decimal=$(decode_base "$STIR" "$stir_base")
+
+# Add them
+sum=$((water_decimal + stir_decimal))
+
+# Convert sum to bestchol base
+encode_base "$sum" "$bestchol_base"
+
