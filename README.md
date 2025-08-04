@@ -1,7 +1,7 @@
 # alx-system_engineering-devops
 # 0x03. Shell, init files, variables and expansions
 
-This project is part of the **ALX System Engineering & DevOps** curriculum. It explores how to use shell initialization files, manage variables, understand expansions, and perform shell arithmetic.
+This project is part of the **ALX Back End ProDev program**. It explores how to use shell initialization files, manage variables, understand expansions, and perform shell arithmetic.
 
 ---
 
