@@ -13,7 +13,6 @@ Domain Name System (DNS) -> www.foobar.com -> 8.8.8.8 (Server IP)
        | 2. HTTP/HTTPS Request to Server IP
        |
        v
-```
 +----------------------------------+
 |          Single Server            |
 |  IP: 8.8.8.8                    |
